@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import PlayGrid from './components/PlayGrid';
 
+const useStyles = makeStyles(() => {
+    return {
+        appContainer: {
+            height: '50vh',
+        },
+    };
+});
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { appContainer } = useStyles();
+
+    return (
+        <Grid container justify="center" className={appContainer}>
+            <PlayGrid />
+        </Grid>
+    );
 }
 
 export default App;
