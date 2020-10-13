@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => {
         },
     };
 });
-export type SquareValue = 'X' | 'O' | undefined;
+export type SquareValue = 'X' | 'O' | '';
 
 export type SquareType = {
     value: SquareValue;
@@ -34,10 +34,7 @@ const Square = ({ value, setValue, index }: SquareType) => {
 
     return (
         <Grid item xs={4} className={squareContainer}>
-            <ListItem
-                button
-                onClick={() => setValue(index)}
-                className={listItemWrapper}>
+            <ListItem button onClick={() => setValue(index)} className={listItemWrapper}>
                 {value}
             </ListItem>
         </Grid>
