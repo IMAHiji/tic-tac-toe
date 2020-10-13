@@ -2,6 +2,7 @@ import * as React from 'react';
 import Grid from '@material-ui/core/Grid';
 import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
+import { SquareValue } from '../TicTacToeContext';
 
 const useStyles = makeStyles(() => {
     return {
@@ -21,7 +22,6 @@ const useStyles = makeStyles(() => {
         },
     };
 });
-export type SquareValue = 'X' | 'O' | '';
 
 export type SquareType = {
     value: SquareValue;
