@@ -79,9 +79,6 @@ const PlayGrid = () => {
                 setHaveWinner(true);
             }
         });
-
-        // const hasXwin = winA.every((element: SquareValue) => element === 'X');
-        // const hasOwin = winA.every((element: SquareValue) => element === 'O');
     }, [playArray]);
 
     return (
