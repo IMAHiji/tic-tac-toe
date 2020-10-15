@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => {
     return {
         playGridContainer: {
             width: '100vw',
+            height: '100vh',
         },
         playGridList: {
             width: '50vw',
@@ -29,7 +30,7 @@ const PlayGrid = () => {
     } = useTicTacToeState();
 
     return (
-        <Grid container wrap="wrap" className={playGridContainer} justify="center">
+        <Grid container wrap="wrap" className={playGridContainer} justify="center" direction="column" alignContent="center">
             {roundWinner ? null : <Typography>Player {playerTurn} &apos;s Turn</Typography>}
             <Typography>{hasWinner ? `${roundWinner} is the winner!` : null}</Typography>
             <List className={playGridList}>

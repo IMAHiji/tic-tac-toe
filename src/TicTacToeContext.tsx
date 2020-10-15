@@ -76,15 +76,17 @@ function checkForWinner(playArray: SquareValue[]) {
     // TODO: holy crap I hate this make it more durable.
     const winA = [playArray[0], playArray[1], playArray[2]];
     const winB = [playArray[0], playArray[3], playArray[6]];
-    const winC = [playArray[3], playArray[4], playArray[5]];
-    const winD = [playArray[6], playArray[7], playArray[8]];
-    const winE = [playArray[0], playArray[4], playArray[8]];
-    const winF = [playArray[2], playArray[4], playArray[6]];
-    const winG = [playArray[2], playArray[5], playArray[8]];
-    const checkArray = [winA, winB, winC, winD, winE, winF, winG];
+    const winC = [playArray[1], playArray[4], playArray[7]];
+    const winD = [playArray[3], playArray[4], playArray[5]];
+    const winE = [playArray[6], playArray[7], playArray[8]];
+    const winF = [playArray[0], playArray[4], playArray[8]];
+    const winG = [playArray[2], playArray[4], playArray[6]];
+    const winH = [playArray[2], playArray[5], playArray[8]];
+    const checkArray = [winA, winB, winC, winD, winE, winF, winG, winH];
     const winPaths: number[][] = [
         [0, 1, 2],
         [0, 3, 6],
+        [1, 4, 7],
         [3, 4, 5],
         [6, 7, 8],
         [0, 4, 8],
