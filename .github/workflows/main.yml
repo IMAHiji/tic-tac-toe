@@ -22,9 +22,9 @@ jobs:
             - run: npm ci
             - run: npm test
             - name: Install Packages
-                run: npm install
+            - run: npm install
             - name: Generate coverage report
-                run: npm run test:coverage
+            - run: npm run test:coverage
             - name: Deploy to gh-pages
                 uses: peaceiris/actions-gh-pages@v3
                 with:
