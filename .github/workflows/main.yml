@@ -21,13 +21,13 @@ jobs:
                   node-version: '14.x'
             - run: npm ci
             - run: npm test
-            - name: Run Build
-            - run: npm run build
-            - name: Publish test coverage report
-              uses: EndBug/add-and-commit@v4
-              with:
-                  add: docs
-                  force: true
-                  message: Add generated docs
-                  env:
-                      GITHUB_TOKEN: $
+            - name: Install Packages
+                run: npm install
+            - name: Generate coverage report
+                run: npm run test:coverage
+            - name: Deploy to gh-pages
+                uses: peaceiris/actions-gh-pages@v3
+                with:
+                    deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+                    publish_dir: ./coverage
+            
