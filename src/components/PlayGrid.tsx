@@ -23,13 +23,13 @@ const useStyles = makeStyles(() => {
 const PlayGrid = () => {
     const { playGridContainer, playGridList } = useStyles();
     const {
-        state: { playArray, playerTurn, hasWinner },
+        state: { playArray, playerTurn, hasWinner, roundWinner },
     } = useTicTacToeState();
 
     return (
         <Grid container wrap="wrap" className={playGridContainer} justify="center">
-            <Typography>Player {playerTurn} &apos;s Turn</Typography>
-            <Typography>{hasWinner ? 'WINNER~!' : null}</Typography>
+            {roundWinner ? null : <Typography>Player {playerTurn} &apos;s Turn</Typography>}
+            <Typography>{hasWinner ? `${roundWinner} is the winner!` : null}</Typography>
             <List className={playGridList}>
                 {playArray.map((item, index) => {
                     const key = `key-${index}`;

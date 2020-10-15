@@ -1,14 +1,6 @@
 import * as React from 'react';
 
-export type TTTStateProviderProps = {
-    children: React.ReactNode;
-    state: TTTSTtate;
-};
 export type SquareValue = 'X' | 'O' | '';
-
-export type TTTDIspatch = (action: TTTAction) => void;
-
-export type TTTAction = { type: 'TOGGLE_SQUARE'; payload: { index: number; value: SquareValue } };
 
 export type TTTSTtate = {
     playArray: SquareValue[];
@@ -18,6 +10,15 @@ export type TTTSTtate = {
     winningPath: number[];
     roundWinner: SquareValue;
 };
+
+export type TTTStateProviderProps = {
+    children: React.ReactNode;
+    state: TTTSTtate;
+};
+
+export type TTTAction = { type: 'TOGGLE_SQUARE'; payload: { index: number; value: SquareValue } };
+
+export type TTTDIspatch = (action: TTTAction) => void;
 
 const TicTacToeStateContext = React.createContext<{ state: TTTSTtate } | undefined>(undefined);
 const TicTacToeDispatchContext = React.createContext<{ dispatch: TTTDIspatch } | undefined>(undefined);
