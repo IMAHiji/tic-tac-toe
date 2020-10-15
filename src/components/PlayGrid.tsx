@@ -12,7 +12,9 @@ const useStyles = makeStyles(() => {
             width: '100vw',
         },
         playGridList: {
-            width: '100%',
+            width: '50vw',
+            height: '50vh',
+            maxHeight: '50vh',
             display: 'flex',
             maxWidth: '50vw',
             flexWrap: 'wrap',
@@ -33,7 +35,6 @@ const PlayGrid = () => {
             <List className={playGridList}>
                 {playArray.map((item, index) => {
                     const key = `key-${index}`;
-
                     return <Square value={item} index={index} key={key} />;
                 })}
             </List>

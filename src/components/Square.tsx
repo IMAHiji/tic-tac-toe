@@ -10,12 +10,15 @@ const useStyles = makeStyles(() => {
             border: '1px solid black',
             height: '33%',
             width: '33%',
+            maxWidth: '33%',
+            maxHeight: '33%',
             flexBasis: 'auto',
             '&:before': {
                 content: '',
                 paddingTop: '100%',
             },
         },
+
         listItemWrapper: {
             height: '100%',
             width: '100%',
