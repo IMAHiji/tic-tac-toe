@@ -4,13 +4,24 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 import App from './App';
+import { TicTacToeDataProvider, TTTSTtate } from './TicTacToeContext';
+
+const initialState: TTTSTtate = {
+    playArray: ['', '', '', '', '', '', '', '', ''],
+    playerTurn: 'X',
+    hasWinner: false,
+    winningPath: [],
+    roundWinner: '',
+};
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <App />
-        </ThemeProvider>
+        <TicTacToeDataProvider state={initialState}>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <App />
+            </ThemeProvider>
+        </TicTacToeDataProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );

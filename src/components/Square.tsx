@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from '@material-ui/core/Grid';
 import ListItem from '@material-ui/core/ListItem';
 import { makeStyles } from '@material-ui/core/styles';
-import { SquareValue } from '../TicTacToeContext';
+import { SquareValue, useTicTacToeDispatch, useTicTacToeState } from '../TicTacToeContext';
 
 const useStyles = makeStyles(() => {
     return {
@@ -25,16 +25,23 @@ const useStyles = makeStyles(() => {
 
 export type SquareType = {
     value: SquareValue;
-    setValue: (index: number) => void;
     index: number;
 };
 
-const Square = ({ value, setValue, index }: SquareType) => {
+const Square = ({ value, index }: SquareType) => {
     const { squareContainer, listItemWrapper } = useStyles();
+    const { dispatch } = useTicTacToeDispatch();
+    const {
+        state: { playerTurn, hasWinner },
+    } = useTicTacToeState();
+    const handleClick = () => {
+        if (hasWinner) return;
+        dispatch({ type: 'TOGGLE_SQUARE', payload: { index, value: playerTurn } });
+    };
 
     return (
         <Grid item xs={4} className={squareContainer}>
-            <ListItem button onClick={() => setValue(index)} className={listItemWrapper}>
+            <ListItem button onClick={handleClick} className={listItemWrapper}>
                 {value}
             </ListItem>
         </Grid>
