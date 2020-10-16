@@ -25,7 +25,6 @@ const TicTacToeDispatchContext = React.createContext<{ dispatch: TTTDIspatch } |
 
 function toeReducer(state: TTTSTtate, { type, payload }: any): TTTSTtate {
     const { playArray, playerTurn } = state;
-    console.log(type);
     switch (type) {
         case 'TOGGLE_SQUARE': {
             const updatedPlayArray: SquareValue[] = playArray;
@@ -110,7 +109,6 @@ function checkForWinner(playArray: SquareValue[]) {
             winningIndex = index;
             roundWinner = 'O';
             winningPath = winPaths[winningIndex];
-            console.log('index', index);
             hasWinner = true;
         }
     });

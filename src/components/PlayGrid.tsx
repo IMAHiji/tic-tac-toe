@@ -31,8 +31,8 @@ const PlayGrid = () => {
 
     return (
         <Grid container wrap="wrap" className={playGridContainer} justify="center" direction="column" alignContent="center">
-            {roundWinner ? null : <Typography>Player {playerTurn} &apos;s Turn</Typography>}
-            <Typography>{hasWinner ? `${roundWinner} is the winner!` : null}</Typography>
+            <Typography title="Player Turn">Player {playerTurn}&apos;s Turn</Typography>
+            {hasWinner ? <Typography title="Winner Display">{roundWinner} is the winner!</Typography> : null}
             <List className={playGridList}>
                 {playArray.map((item, index) => {
                     const key = `key-${index}`;

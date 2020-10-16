@@ -44,7 +44,7 @@ const Square = ({ value, index }: SquareType) => {
 
     return (
         <Grid item xs={4} className={squareContainer}>
-            <ListItem button onClick={handleClick} className={listItemWrapper}>
+            <ListItem button onClick={handleClick} className={listItemWrapper} title={`Position ${index} square`}>
                 {value}
             </ListItem>
         </Grid>
