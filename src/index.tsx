@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './theme';
 import App from './App';
 import { TicTacToeDataProvider, TTTSTtate } from './TicTacToeContext';
+import './index.css';
 
 const initialState: TTTSTtate = {
     playArray: ['', '', '', '', '', '', '', '', ''],
