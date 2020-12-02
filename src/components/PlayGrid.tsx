@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useTicTacToeState } from '../TicTacToeContext';
 import Square from './Square';
 import './playgrid.css';

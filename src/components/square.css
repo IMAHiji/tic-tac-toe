@@ -1,3 +1,4 @@
 .square {
     @apply border border-black rounded;
+    @apply transition-colors duration-200 ease-in-out hover:bg-blue-300;
 }
