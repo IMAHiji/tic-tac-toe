@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.thing {
-    @apply bg-blue-500;
+.appWrapper {
+    @apply h-screen w-screen flex-col items-center;
 }

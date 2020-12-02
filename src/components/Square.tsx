@@ -1,30 +1,6 @@
 import * as React from 'react';
-import Grid from '@material-ui/core/Grid';
-import ListItem from '@material-ui/core/ListItem';
-import { makeStyles } from '@material-ui/core/styles';
 import { SquareValue, useTicTacToeDispatch, useTicTacToeState } from '../TicTacToeContext';
-
-const useStyles = makeStyles(() => {
-    return {
-        squareContainer: {
-            border: '1px solid black',
-            height: '33%',
-            width: '33%',
-            maxWidth: '33%',
-            maxHeight: '33%',
-            flexBasis: 'auto',
-            '&:before': {
-                content: '',
-                paddingTop: '100%',
-            },
-        },
-
-        listItemWrapper: {
-            height: '100%',
-            width: '100%',
-        },
-    };
-});
+import './square.css';
 
 export type SquareType = {
     value: SquareValue;
@@ -32,7 +8,6 @@ export type SquareType = {
 };
 
 const Square = ({ value, index }: SquareType) => {
-    const { squareContainer, listItemWrapper } = useStyles();
     const { dispatch } = useTicTacToeDispatch();
     const {
         state: { playerTurn, hasWinner },
@@ -43,11 +18,9 @@ const Square = ({ value, index }: SquareType) => {
     };
 
     return (
-        <Grid item xs={4} className={`${squareContainer} thing`}>
-            <ListItem button onClick={handleClick} className={listItemWrapper} title={`Position ${index} square`}>
-                {value}
-            </ListItem>
-        </Grid>
+        <div className="square" role="button" onKeyPress={handleClick} onClick={handleClick} title={`Position ${index} square`} tabIndex={0}>
+            {value}
+        </div>
     );
 };
 
