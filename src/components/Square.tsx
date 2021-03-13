@@ -24,4 +24,8 @@ const Square = ({ value, index }: SquareType) => {
     );
 };
 
-export default Square;
+export default React.memo(Square, hasValueChanged);
+
+function hasValueChanged({ value: prevValue }: SquareType, { value: nextValue }: SquareType) {
+    return prevValue === nextValue;
+}
